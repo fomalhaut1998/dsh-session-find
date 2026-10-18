@@ -1,0 +1,58 @@
+{
+  "name": "dsh-session-find",
+  "version": "1.4.0",
+  "type": "module",
+  "description": "Ctrl+F find-in-session for DeepSeek Harness: full-text search over the loaded conversation, with source labels, turn grouping, regex / case / whole-word options and Markdown export.",
+  "meta": {
+    "title": "会话内查找",
+    "description": "Ctrl+F 在对话内全文查找：来源分类、轮次分组、正则/大小写/全词、复制与导出 Markdown"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "client.js",
+    "index.js",
+    "cordis.patch.yml",
+    "locale",
+    "assets",
+    "README.md",
+    "README.en.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "search",
+    "find-in-page",
+    "conversation",
+    "ctrl-f"
+  ],
+  "license": "MIT",
+  "author": "fomalhaut1998",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fomalhaut1998/dsh-session-find.git"
+  },
+  "homepage": "https://github.com/fomalhaut1998/dsh-session-find#readme",
+  "bugs": {
+    "url": "https://github.com/fomalhaut1998/dsh-session-find/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}
