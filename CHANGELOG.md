@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.1 — 2026-10-19
+
+- Fix the English export metadata plural: a single row now reads `1 row listed` instead of `1 rows listed` (and a single match reads `1 match`).
+- Ship the reworked README in the npm tarball — 1.4.0 was published before the compatibility, troubleshooting, development and badge sections landed.
+
 ## 1.4.0 — 2026-10-18
 
 - **Copy / export Markdown**: header buttons copy the current result set, or save it as `.md`; the document has an H1, a metadata block (scope, options, timestamp, match count) and `### 第 N 轮` sections with `- **source** — snippet` rows.

@@ -1,6 +1,6 @@
 {
   "name": "dsh-session-find",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "type": "module",
   "description": "Ctrl+F find-in-session for DeepSeek Harness: full-text search over the loaded conversation, with source labels, turn grouping, regex / case / whole-word options and Markdown export.",
   "meta": {

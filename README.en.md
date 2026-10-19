@@ -88,7 +88,7 @@ Counts are literal: **matches** is every occurrence (duplicates included), **lis
 # Search: tool
 
 > Message text only · 2026/10/18 14:56:48
-> 45 matches · 1 rows listed
+> 45 matches · 1 row listed
 
 ### Turn 4
 

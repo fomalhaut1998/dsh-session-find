@@ -66,6 +66,9 @@ window.__ModuleLoader__.load({
       exportPrompt: '已生成 Markdown，请在保存对话框中确认',
       exportTitle: '检索：{q}',
       exportMeta: '{n} 处匹配 · 列出 {rows} 条',
+      exportMetaOneRow: '{n} 处匹配 · 列出 {rows} 条',
+      exportMetaOneMatch: '{n} 处匹配 · 列出 {rows} 条',
+      exportMetaOneBoth: '{n} 处匹配 · 列出 {rows} 条',
       exportCopied: '已复制 Markdown 到剪贴板',
       exportFailed: '复制/导出失败，请重试',
       user: '你',
@@ -126,6 +129,9 @@ window.__ModuleLoader__.load({
       exportPrompt: 'Markdown ready — confirm it in the save dialog',
       exportTitle: 'Search: {q}',
       exportMeta: '{n} matches · {rows} rows listed',
+      exportMetaOneRow: '{n} matches · {rows} row listed',
+      exportMetaOneMatch: '{n} match · {rows} rows listed',
+      exportMetaOneBoth: '{n} match · {rows} row listed',
       exportCopied: 'Markdown copied',
       exportFailed: 'Copy/download failed, please retry',
       user: 'You',
@@ -1590,7 +1596,11 @@ window.__ModuleLoader__.load({
           if (options.wholeWord === true) bits.push(t('optWholeWord'));
           bits.push(new Date().toLocaleString());
           lines.push('> ' + bits.join(' · '));
-          lines.push('> ' + t('exportMeta', { n: total, rows: listed.length }));
+          var metaKey = 'exportMeta';
+          if (total === 1 && listed.length === 1) metaKey = 'exportMetaOneBoth';
+          else if (total === 1) metaKey = 'exportMetaOneMatch';
+          else if (listed.length === 1) metaKey = 'exportMetaOneRow';
+          lines.push('> ' + t(metaKey, { n: total, rows: listed.length }));
           var lastTurn = null;
           for (var i = 0; i < listed.length; i += 1) {
             var item = listed[i];
